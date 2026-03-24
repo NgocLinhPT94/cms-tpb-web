@@ -1,0 +1,9 @@
+{
+    "collectionName": "components_shared_link",
+    "info": { "displayName": "Link" },
+    "attributes": {
+      "label": { "type": "string" },
+      "url": { "type": "string" },
+      "external": { "type": "boolean", "default": false }
+    }
+  }

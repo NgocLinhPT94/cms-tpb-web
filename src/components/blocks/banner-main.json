@@ -1,0 +1,15 @@
+{
+    "collectionName": "components_blocks_banner_main",
+    "info": { "displayName": "Banner Main" },
+    "attributes": {
+      "title": { "type": "string" },
+      "subtitle": { "type": "string" },
+      "background": { "type": "media" },
+      "buttons": {
+        "type": "component",
+        "repeatable": true,
+        "component": "shared.button"
+      },
+      "theme": { "type": "component", "component": "shared.theme-options" }
+    }
+  }

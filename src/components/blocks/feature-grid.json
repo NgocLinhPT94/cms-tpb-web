@@ -1,0 +1,11 @@
+{
+    "collectionName": "components_blocks_feature_grid",
+    "info": { "displayName": "Feature Grid" },
+    "attributes": {
+      "items": {
+        "type": "component",
+        "repeatable": true,
+        "component": "shared.media"
+      }
+    }
+  }

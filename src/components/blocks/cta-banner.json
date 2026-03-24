@@ -1,0 +1,11 @@
+{
+    "collectionName": "components_blocks_cta_banner",
+    "info": { "displayName": "CTA Banner" },
+    "attributes": {
+      "title": { "type": "string" },
+      "button": {
+        "type": "component",
+        "component": "shared.button"
+      }
+    }
+  }

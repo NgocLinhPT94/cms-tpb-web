@@ -1,0 +1,8 @@
+{
+    "collectionName": "components_shared_analytics",
+    "info": { "displayName": "Analytics Tracking" },
+    "attributes": {
+      "eventName": { "type": "string" },
+      "payload": { "type": "json" }
+    }
+  }

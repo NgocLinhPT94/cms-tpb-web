@@ -1,0 +1,11 @@
+{
+    "collectionName": "components_blocks_news_block",
+    "info": { "displayName": "News Block" },
+    "attributes": {
+      "articles": {
+        "type": "relation",
+        "relation": "manyToMany",
+        "target": "api::article.article"
+      }
+    }
+  }

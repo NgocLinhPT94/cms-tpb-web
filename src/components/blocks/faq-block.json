@@ -1,0 +1,11 @@
+{
+    "collectionName": "components_blocks_faq_block",
+    "info": { "displayName": "FAQ Block" },
+    "attributes": {
+      "faqs": {
+        "type": "relation",
+        "relation": "manyToMany",
+        "target": "api::article.article"
+      }
+    }
+  }

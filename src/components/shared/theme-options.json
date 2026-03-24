@@ -1,0 +1,19 @@
+{
+    "collectionName": "components_shared_theme_options",
+    "info": { "displayName": "Theme Options" },
+    "attributes": {
+      "backgroundColor": {
+        "type": "enumeration",
+        "enum": ["white", "gray", "primary", "secondary"]
+      },
+      "padding": {
+        "type": "enumeration",
+        "enum": ["none", "small", "medium", "large"]
+      },
+      "layout": {
+        "type": "enumeration",
+        "enum": ["full", "boxed"],
+        "default": "full"
+      }
+    }
+  }

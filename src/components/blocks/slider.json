@@ -1,0 +1,12 @@
+{
+    "collectionName": "components_blocks_slider",
+    "info": { "displayName": "Slider" },
+    "attributes": {
+      "items": {
+        "type": "component",
+        "repeatable": true,
+        "component": "shared.media"
+      }
+    }
+  }
+  

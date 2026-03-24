@@ -1,0 +1,11 @@
+{
+    "collectionName": "components_blocks_product_highlight",
+    "info": { "displayName": "Product Highlight" },
+    "attributes": {
+      "products": {
+        "type": "relation",
+        "relation": "manyToMany",
+        "target": "api::article.article"
+      }
+    }
+  }
