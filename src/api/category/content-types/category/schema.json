@@ -26,6 +26,12 @@
     },
     "description": {
       "type": "text"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq",
+      "mappedBy": "category"
     }
   }
 }
