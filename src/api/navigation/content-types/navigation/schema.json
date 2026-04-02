@@ -1,14 +1,35 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "navigations",
   "info": {
     "singularName": "navigation",
     "pluralName": "navigations",
-    "displayName": "navigation"
+    "displayName": "Navigation"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "name": {
+      "type": "text"
+    },
+    "type_menu": {
+      "type": "enumeration",
+      "enum": [
+        "Header",
+        "Footer",
+        "Mobile"
+      ]
+    },
+    "on_off": {
+      "type": "boolean"
+    },
+    "navigation_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navigation-item.navigation-item",
+      "mappedBy": "navigation"
+    }
+  }
 }

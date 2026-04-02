@@ -32,14 +32,14 @@
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "blocks.slider",
         "blocks.rich-text",
         "blocks.product-highlight",
         "blocks.news-block",
         "blocks.feature-grid",
         "blocks.faq-block",
         "blocks.cta-banner",
-        "blocks.banner-main"
+        "blocks.banner-main",
+        "shared.slider"
       ]
     },
     "workflowState": {

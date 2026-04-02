@@ -7,11 +7,31 @@
   },
   "options": {},
   "attributes": {
-    "files": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": ["images"]
+    "title": {
+      "type": "string"
+    },
+    "autoplay": {
+      "type": "boolean"
+    },
+    "interval": {
+      "type": "integer"
+    },
+    "show_navigation": {
+      "type": "boolean"
+    },
+    "show_pagination": {
+      "type": "boolean"
+    },
+    "slides_per_view": {
+      "type": "integer"
+    },
+    "slides_mobile": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "component",
+      "component": "shared.slider-item",
+      "repeatable": true
     }
   }
 }

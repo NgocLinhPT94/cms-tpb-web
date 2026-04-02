@@ -1,11 +1,24 @@
 {
-    "collectionName": "components_blocks_feature_grid",
-    "info": { "displayName": "Feature Grid" },
-    "attributes": {
-      "items": {
-        "type": "component",
-        "repeatable": true,
-        "component": "shared.media"
-      }
+  "collectionName": "components_blocks_feature_grid",
+  "info": {
+    "displayName": "Feature Grid"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "themeOptions": {
+      "type": "component",
+      "component": "shared.theme-options",
+      "repeatable": false
+    },
+    "items": {
+      "type": "component",
+      "component": "shared.feature-item",
+      "repeatable": true
     }
   }
+}

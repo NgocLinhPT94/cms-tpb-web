@@ -633,10 +633,54 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
+export interface ApiNavigationItemNavigationItem
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'navigation_items';
+  info: {
+    displayName: 'NavigationItem';
+    pluralName: 'navigation-items';
+    singularName: 'navigation-item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    children: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation-item.navigation-item'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    icon: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation-item.navigation-item'
+    > &
+      Schema.Attribute.Private;
+    navigation: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::navigation.navigation'
+    >;
+    order: Schema.Attribute.Integer;
+    parent: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::navigation-item.navigation-item'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.Text;
+  };
+}
+
+export interface ApiNavigationNavigation extends Struct.CollectionTypeSchema {
   collectionName: 'navigations';
   info: {
-    displayName: 'navigation';
+    displayName: 'Navigation';
     pluralName: 'navigations';
     singularName: 'navigation';
   };
@@ -653,7 +697,14 @@ export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
       'api::navigation.navigation'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.Text;
+    navigation_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation-item.navigation-item'
+    >;
+    on_off: Schema.Attribute.Boolean;
     publishedAt: Schema.Attribute.DateTime;
+    type_menu: Schema.Attribute.Enumeration<['Header', 'Footer', 'Mobile']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -682,7 +733,6 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.DynamicZone<
       [
-        'blocks.slider',
         'blocks.rich-text',
         'blocks.product-highlight',
         'blocks.news-block',
@@ -690,6 +740,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.faq-block',
         'blocks.cta-banner',
         'blocks.banner-main',
+        'shared.slider',
       ]
     >;
     slug: Schema.Attribute.UID;
@@ -1309,6 +1360,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
+      'api::navigation-item.navigation-item': ApiNavigationItemNavigationItem;
       'api::navigation.navigation': ApiNavigationNavigation;
       'api::page.page': ApiPagePage;
       'api::product.product': ApiProductProduct;

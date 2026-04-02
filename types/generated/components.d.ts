@@ -41,7 +41,10 @@ export interface BlocksFeatureGrid extends Struct.ComponentSchema {
     displayName: 'Feature Grid';
   };
   attributes: {
-    items: Schema.Attribute.Component<'shared.media', true>;
+    description: Schema.Attribute.Text;
+    items: Schema.Attribute.Component<'shared.feature-item', true>;
+    themeOptions: Schema.Attribute.Component<'shared.theme-options', false>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -106,6 +109,20 @@ export interface SharedButton extends Struct.ComponentSchema {
     style: Schema.Attribute.Enumeration<['primary', 'secondary', 'link']> &
       Schema.Attribute.DefaultTo<'primary'>;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFeatureItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_feature_items';
+  info: {
+    displayName: 'Feature-item';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images', true>;
+    link: Schema.Attribute.Component<'shared.link', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -190,7 +207,38 @@ export interface SharedSlider extends Struct.ComponentSchema {
     icon: 'address-book';
   };
   attributes: {
-    files: Schema.Attribute.Media<'images', true>;
+    autoplay: Schema.Attribute.Boolean;
+    interval: Schema.Attribute.Integer;
+    items: Schema.Attribute.Component<'shared.slider-item', true>;
+    show_navigation: Schema.Attribute.Boolean;
+    show_pagination: Schema.Attribute.Boolean;
+    slides_mobile: Schema.Attribute.Integer;
+    slides_per_view: Schema.Attribute.Integer;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedSliderItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_slider_items';
+  info: {
+    displayName: 'Slider-item';
+  };
+  attributes: {
+    anotherdescription: Schema.Attribute.Blocks;
+    description: Schema.Attribute.Blocks;
+    icon: Schema.Attribute.Media<'images'>;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    is_active: Schema.Attribute.Boolean;
+    linkslable: Schema.Attribute.Component<'shared.link', true>;
+    mobile_image: Schema.Attribute.Media<
+      'images' | 'videos' | 'audios' | 'files',
+      true
+    >;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -222,6 +270,7 @@ declare module '@strapi/strapi' {
       'blocks.slider': BlocksSlider;
       'shared.analytics-tracking': SharedAnalyticsTracking;
       'shared.button': SharedButton;
+      'shared.feature-item': SharedFeatureItem;
       'shared.link': SharedLink;
       'shared.media': SharedMedia;
       'shared.metadata': SharedMetadata;
@@ -229,6 +278,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.slider-item': SharedSliderItem;
       'shared.theme-options': SharedThemeOptions;
     }
   }
