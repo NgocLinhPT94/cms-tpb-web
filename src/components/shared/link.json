@@ -1,9 +1,31 @@
 {
-    "collectionName": "components_shared_link",
-    "info": { "displayName": "Link" },
-    "attributes": {
-      "label": { "type": "string" },
-      "url": { "type": "string" },
-      "external": { "type": "boolean", "default": false }
+  "collectionName": "components_shared_link",
+  "info": {
+    "displayName": "Link"
+  },
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "external": {
+      "type": "boolean",
+      "default": false
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "order": {
+      "type": "integer"
     }
   }
+}

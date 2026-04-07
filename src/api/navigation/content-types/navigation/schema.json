@@ -17,9 +17,9 @@
     "type_menu": {
       "type": "enumeration",
       "enum": [
-        "Header",
-        "Footer",
-        "Mobile"
+        "header",
+        "footer",
+        "mobile"
       ]
     },
     "on_off": {
@@ -30,6 +30,16 @@
       "relation": "oneToMany",
       "target": "api::navigation-item.navigation-item",
       "mappedBy": "navigation"
+    },
+    "iconshare": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "ButtonShare": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": true
     }
   }
 }

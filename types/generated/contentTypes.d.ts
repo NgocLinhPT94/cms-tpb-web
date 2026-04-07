@@ -659,6 +659,7 @@ export interface ApiNavigationItemNavigationItem
       'api::navigation-item.navigation-item'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.Text;
     navigation: Schema.Attribute.Relation<
       'manyToOne',
       'api::navigation.navigation'
@@ -688,9 +689,11 @@ export interface ApiNavigationNavigation extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    ButtonShare: Schema.Attribute.Component<'shared.button', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    iconshare: Schema.Attribute.Component<'shared.link', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -704,7 +707,7 @@ export interface ApiNavigationNavigation extends Struct.CollectionTypeSchema {
     >;
     on_off: Schema.Attribute.Boolean;
     publishedAt: Schema.Attribute.DateTime;
-    type_menu: Schema.Attribute.Enumeration<['Header', 'Footer', 'Mobile']>;
+    type_menu: Schema.Attribute.Enumeration<['header', 'footer', 'mobile']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -739,8 +742,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.feature-grid',
         'blocks.faq-block',
         'blocks.cta-banner',
-        'blocks.banner-main',
         'shared.slider',
+        'blocks.banners-main',
       ]
     >;
     slug: Schema.Attribute.UID;

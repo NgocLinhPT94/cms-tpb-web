@@ -1,15 +1,34 @@
 {
-    "collectionName": "components_blocks_banner_main",
-    "info": { "displayName": "Banner Main" },
-    "attributes": {
-      "title": { "type": "string" },
-      "subtitle": { "type": "string" },
-      "background": { "type": "media" },
-      "buttons": {
-        "type": "component",
-        "repeatable": true,
-        "component": "shared.button"
-      },
-      "theme": { "type": "component", "component": "shared.theme-options" }
+  "collectionName": "components_blocks_banner_main",
+  "info": {
+    "displayName": "Banner Item"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "buttons": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": true
+    },
+    "theme": {
+      "type": "component",
+      "component": "shared.theme-options"
+    },
+    "order": {
+      "type": "integer"
     }
   }
+}

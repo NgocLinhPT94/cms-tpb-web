@@ -38,8 +38,8 @@
         "blocks.feature-grid",
         "blocks.faq-block",
         "blocks.cta-banner",
-        "blocks.banner-main",
-        "shared.slider"
+        "shared.slider",
+        "blocks.banners-main"
       ]
     },
     "workflowState": {

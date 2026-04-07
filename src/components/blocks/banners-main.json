@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_banners_mains",
+  "info": {
+    "displayName": "Banners Main"
+  },
+  "options": {},
+  "attributes": {
+    "banners": {
+      "type": "component",
+      "component": "blocks.banner-main",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

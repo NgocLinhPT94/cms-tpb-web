@@ -3,14 +3,25 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface BlocksBannerMain extends Struct.ComponentSchema {
   collectionName: 'components_blocks_banner_main';
   info: {
-    displayName: 'Banner Main';
+    displayName: 'Banner Item';
   };
   attributes: {
-    background: Schema.Attribute.Media;
+    background: Schema.Attribute.Media<'images' | 'videos'>;
     buttons: Schema.Attribute.Component<'shared.button', true>;
+    order: Schema.Attribute.Integer;
     subtitle: Schema.Attribute.String;
     theme: Schema.Attribute.Component<'shared.theme-options', false>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksBannersMain extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_banners_mains';
+  info: {
+    displayName: 'Banners Main';
+  };
+  attributes: {
+    banners: Schema.Attribute.Component<'blocks.banner-main', true>;
   };
 }
 
@@ -133,7 +144,9 @@ export interface SharedLink extends Struct.ComponentSchema {
   };
   attributes: {
     external: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     label: Schema.Attribute.String;
+    order: Schema.Attribute.Integer;
     url: Schema.Attribute.String;
   };
 }
@@ -261,6 +274,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.banner-main': BlocksBannerMain;
+      'blocks.banners-main': BlocksBannersMain;
       'blocks.cta-banner': BlocksCtaBanner;
       'blocks.faq-block': BlocksFaqBlock;
       'blocks.feature-grid': BlocksFeatureGrid;
